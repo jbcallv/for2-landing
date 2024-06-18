@@ -1,5 +1,14 @@
 <script>
 	let email = '';
+	let success = false;
+
+	const showSuccessMessage = () => {
+		success = true;
+
+		setTimeout(() => {
+			success = false;
+		}, 5000);
+	};
 </script>
 
 <div class="flex h-full justify-center items-center space-x-60">
@@ -24,8 +33,12 @@
 			/>
 			<button
 				class="bg-[#FABC2A] rounded-[20px] h-[45px] w-full"
-				on:click|preventDefault={() => console.log(email)}>receive news</button
+				on:click|preventDefault={() => showSuccessMessage()}>receive news</button
 			>
+
+			{#if success}
+				<p class="absolute text-center text-[#bbbabfc5] w-[350px]">added to newslist.</p>
+			{/if}
 		</div>
 	</div>
 </div>
