@@ -1,14 +1,6 @@
 <script>
-	let email = '';
-	let success = false;
-
-	const showSuccessMessage = () => {
-		success = true;
-
-		setTimeout(() => {
-			success = false;
-		}, 5000);
-	};
+	/** @type {import('./$types').ActionData} */
+	export let form;
 </script>
 
 <div class="flex h-full justify-center items-center space-x-60">
@@ -25,20 +17,19 @@
 			<p class="text-[80px] text-[#bbbabfc5] text-center">coming soon.</p>
 		</div>
 
-		<div class="space-y-4">
+		<form method="POST" class="space-y-4">
 			<input
+				name="email"
 				class="bg-[#211F29] rounded-[20px] h-[45px] pl-6 w-full outline-none text-[#FFFAFA]"
 				placeholder="email"
-				bind:value={email}
 			/>
-			<button
-				class="bg-[#FABC2A] rounded-[20px] h-[45px] w-full"
-				on:click|preventDefault={() => showSuccessMessage()}>receive news</button
-			>
+			<button type="submit" class="bg-[#FABC2A] rounded-[20px] h-[45px] w-full">
+				receive news
+			</button>
 
-			{#if success}
-				<p class="absolute text-center text-[#bbbabfc5] w-[350px]">added to newslist.</p>
+			{#if form}
+				<p class="absolute text-center text-[#bbbabfc5] w-[350px]">{form?.message}</p>
 			{/if}
-		</div>
+		</form>
 	</div>
 </div>
