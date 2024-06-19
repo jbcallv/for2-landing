@@ -3,6 +3,14 @@
 	export let form;
 </script>
 
+<svelte:head>
+	<title>For Two: Nurture Your Love Story</title>
+	<meta
+		name="description"
+		content="Deepen your connection with a private social app just for couples. Share moments, secrets, and stay connected - it's just the two of you."
+	/>
+</svelte:head>
+
 <div class="flex h-full justify-center items-center space-x-60">
 	<div class="flex justify-center items-center h-[450px] w-[450px] rounded-[20px] bg-[#211F29]">
 		<div class="flex -space-x-20 space-y-16">
