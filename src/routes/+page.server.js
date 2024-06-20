@@ -14,6 +14,6 @@ export const actions = {
 		const response = await supabase.from('email_list').insert([{ email }]);
 
 		if (!response.error) return { success: true, message: 'added to email list.' };
-		return fail(500, { message: response.error, success: false });
+		return fail(500, { message: "couldn't add to email list.", success: false });
 	}
 };
